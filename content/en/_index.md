@@ -1,3 +1,3 @@
 ---
-title: The truth must be told
+title: Home
 ---
