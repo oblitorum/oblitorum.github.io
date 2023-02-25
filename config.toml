@@ -1,0 +1,116 @@
+baseURL = "https://oblitorum.github.io/"
+languageCode = "en-us"
+title = "Jason Ng"
+summaryLength = 15
+paginate = 5
+copyright = "Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)."
+googleAnalytics = "UA-184494738-1"
+
+[module]
+  [[module.imports]]
+    path = "github.com/foo-dogsquared/hugo-theme-arch-terminal"
+
+[mediaTypes]
+    [mediaTypes."application/atom+xml"]
+        suffixes = ["atom"]
+    
+    [mediaTypes."application/rss+xml"]
+        suffixes = ["rss"]
+
+[outputFormats]
+    [outputFormats.RSS]
+        mediaType = "application/rss+xml"
+        baseName = "index"
+        
+    [outputFormats.Atom]
+        mediaType = "application/atom+xml"
+        baseName = "index"
+
+[outputs]
+    home = ["HTML", "RSS", "ATOM", "JSON"]
+    section = ["HTML", "RSS", "ATOM", "JSON"]
+
+[author]
+    name = "John Dodo"
+    alias = "ordinary-extinction"
+    email = "johndodo@example.com"
+
+[menu]
+    [[menu.main]]
+        identifier = "articles"
+        name = "Articles"
+        url = "articles/"
+
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "about/"
+
+    [[menu.main]]
+        identifier = "archives"
+        name = "Archives"
+        url = "archives/"
+
+    [[menu.main]]
+        identifier = "feeds"
+        name = "Feeds"
+        url = "feeds/"
+
+[params]
+    # The subtitle of the blog. Mostly appears in the <title> tag.
+    subtitle = "Blogger"
+    keywords = ["John Dodo", "ordinary-extinction", "blog"]
+
+    # The tagline that'll appear in the homepage as the first header. 
+    tagline = "The truth must be told."
+        
+    # Hide posts on home. :)
+    # hidePostsOnHome = true
+    
+    # Indicates if the site sections should be listed instead.
+    # Requires `showPostsOnHome` to be enabled.
+    # listSiteSectionsOnHome = true 
+
+    # Enable content pagination
+    # enableContentPagination = true
+
+    # Improve SEO capabilities
+    enableTwitterCard = true
+    enableOpenGraphSchema = true 
+    enableJsonLdSchema = true
+
+    # Enables syntax highlighting. ;p
+    # enableLazySyntaxHighlighting = true
+
+    # Set the syntax highlighter to be used. 
+    # Only valid options are "highlighterjs" or "prismjs".
+    # By default, it uses highlighter.js as the syntax highlighter if there's no set value. 
+    # syntaxHighlighter = "prismjs"
+    
+    # Indicates to show the icon whether the link leads to a page or a section. 
+    # The effect is visible if `showPostsOnHome` is at least enabled. 
+    showPageTypeIcon = true
+    
+    # Shows breadcrumbs in the post.
+    enableBreadcrumbs = true
+
+    # Indicates if certain headers have to be styled.
+    # contentIsStyled = true
+
+    # Enable theme toggle (dark mode for some)
+    # enableThemeToggle = true
+
+    # Enable MathJax support
+    enableMathjax = true
+
+    # Use MathJax V2
+    # setMathjaxToV2 = true
+
+    # Enable client-side search engine 
+    # enableSiteSearch = true
+
+    # Enable content reader mode
+    enableContentReaderMode = true 
+
+    # Enable compact mode for the list templates
+    enableCompactListMode = true
