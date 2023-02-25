@@ -1,0 +1,1 @@
+function toggleVisibilityEvent({event:e,target:t="",oneTime:n=!1,callback:s}={}){const o=e.target;return toggleVisibility({element:o,target:t,oneTime:n,callback:s})}function toggleVisibility({element:e,target:t="",oneTime:n=!1,callback:s}={}){let o=0;if(n&&e.classList.toggle("hidden"),t.length>0){const n=e.closest(t);n.classList.toggle("hidden")}return s&&s(),o}

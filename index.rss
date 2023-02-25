@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Jason Ng</title>
+    <link>https://oblitorum.github.io/</link>
+    <description>Recent content in Home on Jason Ng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>johndodo@example.com (John Dodo)</managingEditor>
+    <webMaster>johndodo@example.com (John Dodo)</webMaster>
+    <copyright>Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).</copyright>
+    <lastBuildDate>Sun, 26 Feb 2023 05:14:47 +0800</lastBuildDate>
+    <docs>https://cyber.harvard.edu/rss/rss.html</docs>
+    
+        <atom:link href="https://oblitorum.github.io/index.rss" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>Be Aware of How ListenAndServeTLS Handles Http Request on Golang net/http Package</title>
+      <link>https://oblitorum.github.io/articles/be-aware-of-how-listenandservetls-handles-http-request-on-golang-net-http-package/</link>
+      <category>Golang</category>
+      <pubDate>Mon, 04 Apr 2022 17:53:38 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://oblitorum.github.io/articles/be-aware-of-how-listenandservetls-handles-http-request-on-golang-net-http-package/</guid>
+      <description>&lt;p&gt;On version &amp;gt;= 1.12, Golang changes its way to handle HTTP request when you serve with ListenAndServeTLS method. The difference is shown on below image, which is taken from this &lt;a href=&#34;https://github.com/golang/go/compare/go1.11.13...golang:go1.12&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oblitorum.github.io/images/be-aware-of-how-listenandservetls-handles-http-request-on-golang-net-http-package-1.png&#34; alt=&#34;golang 1.11.13 and 1.12 diff image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As we can see, on version &amp;lt; 1.12, it just returns without writing anything in response, which makes a &amp;lsquo;malformed HTTP response&amp;rsquo; error when you use Get or Client.Do with net/http package. And on version &amp;gt;= 1.12, it will return an 400 response with &amp;lsquo;Client sent an HTTP request to an HTTPS server.&amp;rsquo; message.&lt;/p&gt;
+&lt;p&gt;Some third-party packages haven&amp;rsquo;t noticed this difference yet, they may use &amp;lsquo;malformed HTTP response&amp;rsquo; error to check if server setup TLS or not. For example, &lt;a href=&#34;https://github.com/percona/pmm-client/blob/cd42b1da19df0a278302a74d475db1e8e1fe0cb1/pmm/check_network.go#L365&#34;&gt;this one&lt;/a&gt; uses this way, it will cause a problem if the server is built with Golang version &amp;gt;= 1.12.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
